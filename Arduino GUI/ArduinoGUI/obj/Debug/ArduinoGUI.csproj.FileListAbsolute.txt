@@ -1,0 +1,10 @@
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\bin\Debug\ArduinoGUI.exe.config
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\bin\Debug\ArduinoGUI.exe
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\bin\Debug\ArduinoGUI.pdb
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.csproj.AssemblyReference.cache
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.ArduinoGUI.resources
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.Properties.Resources.resources
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.csproj.GenerateResource.cache
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.csproj.CoreCompileInputs.cache
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.exe
+D:\RIGELSAN\Desktop Application GUI\Learning Projects\Arduino GUI\ArduinoGUI\obj\Debug\ArduinoGUI.pdb
