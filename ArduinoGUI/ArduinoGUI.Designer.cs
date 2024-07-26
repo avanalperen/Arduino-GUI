@@ -36,12 +36,14 @@
             this.textBoxAngle = new System.Windows.Forms.TextBox();
             this.trackBarRedValue = new System.Windows.Forms.TrackBar();
             this.sendRedValue = new System.Windows.Forms.Button();
+            this.textBoxCounter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRedValue)).BeginInit();
             this.SuspendLayout();
             // 
             // serialPort1
             // 
             this.serialPort1.PortName = "COM5";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // onButton
             // 
@@ -114,11 +116,20 @@
             this.sendRedValue.UseVisualStyleBackColor = true;
             this.sendRedValue.Click += new System.EventHandler(this.sendRedValue_Click);
             // 
+            // textBoxCounter
+            // 
+            this.textBoxCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxCounter.Location = new System.Drawing.Point(30, 257);
+            this.textBoxCounter.Name = "textBoxCounter";
+            this.textBoxCounter.Size = new System.Drawing.Size(100, 31);
+            this.textBoxCounter.TabIndex = 6;
+            // 
             // ArduinoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCounter);
             this.Controls.Add(this.sendRedValue);
             this.Controls.Add(this.trackBarRedValue);
             this.Controls.Add(this.textBoxAngle);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.TextBox textBoxAngle;
         private System.Windows.Forms.TrackBar trackBarRedValue;
         private System.Windows.Forms.Button sendRedValue;
+        private System.Windows.Forms.TextBox textBoxCounter;
     }
 }
 

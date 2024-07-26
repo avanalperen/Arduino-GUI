@@ -13,6 +13,44 @@ Servo s1;
 String r;
 int ledValue;
 
+//Pushbutton
+unsigned long lastDebounceTime = 0;
+unsigned long debounceDelay = 5;
+int buttonState;
+int lastButtonState = HIGH; 
+
+//Purpose of debounce timer is to indicate that the button is not pushed in that time againly to control it in more efficient way
+void handleButton(void)
+{
+  //Read pin 4
+  int reading = digitalRead(4);
+
+  //Switch changed state
+  if(reading != lastButtonState)
+  {
+    //Reset the debouncing timer - millis()
+    lastDebounceTime = millis();
+  }
+
+  //Wait for the debounce timer 
+  if((millis() - lastDebounceTime) > debounceDelay)
+  {
+    //If the button state has changed
+    if(reading != buttonState)
+    {
+      buttonState = reading; 
+    }
+
+    //Send data if button state is high
+    if(buttonState == HIGH) //The problem could be here !!!!!!!
+    {
+      Serial.println("p");
+    }
+  }
+
+  //Save the reading for the next time through the loop
+  lastButtonState = reading;
+}
 
 void setup() {
 
@@ -20,10 +58,13 @@ void setup() {
   Serial.begin(9600);
 
   //Define 13th pin as Output pin so that we can control the embedded LED
-  pinMode(13,OUTPUT);
+  pinMode(13, OUTPUT);
 
   //Define 3th pin as Output pin so that we can control the red LED
-  pinMode(3,OUTPUT);
+  pinMode(3, OUTPUT);
+
+  //Define 4th pin as Input Pullup pin so that pushbutton can be followed whether is pushed or not
+  pinMode(4, INPUT_PULLUP);
 
   //Attach servo to pin 9
   s1.attach(9);
@@ -71,10 +112,11 @@ void loop() {
       ledValue = r.toInt();
       analogWrite(3, ledValue);
       break;
-
-      
-    }
-
+    }   
   }
 
+  handleButton();
+  
 }
+
+

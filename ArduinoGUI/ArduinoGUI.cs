@@ -16,6 +16,12 @@ namespace ArduinoGUI
         //String value to hold the red LED intensity
         private string red;
 
+        //A bridge that is need between the two threads
+        public delegate void d1(string indata);
+
+        //A counter that is indicating how many times button is pushed
+        private static int counter = 0;
+
         public ArduinoGUI()
         {
             InitializeComponent();
@@ -52,7 +58,7 @@ namespace ArduinoGUI
         private void trackBarRedValue_Scroll(object sender, EventArgs e)
         {
 
-            red = "R" + trackBarRedValue.Text;
+            red = "R" + trackBarRedValue.Value;
 
         }
 
@@ -66,6 +72,33 @@ namespace ArduinoGUI
 
             serialPort1.Write(red);
 
+        }
+
+        //This function receive data from Arduino
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+
+            string inData = serialPort1.ReadLine();
+            d1 writeIt = new d1(writeToForm);
+            Invoke(writeIt, inData);
+        }
+
+        //This function handles about data receiving from Arduino
+        public void writeToForm(string inData)
+        {
+            
+            char firstChar;
+            Single numData;
+            firstChar = inData[0];
+            
+            switch(firstChar)
+            {
+                case 'p': //'p' means pushbutton
+                    counter++;
+                    textBoxCounter.Text = Convert.ToString(counter);
+                    break;
+            }
+            
         }
 
         
