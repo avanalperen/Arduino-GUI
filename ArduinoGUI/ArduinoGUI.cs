@@ -96,11 +96,8 @@ namespace ArduinoGUI
                 case 'p': //'p' means pushbutton
                     counter++;
                     textBoxCounter.Text = Convert.ToString(counter);
-                    break;
+                break;
             }
-            
-        }
-
-        
+        }    
     }
 }

@@ -42,7 +42,7 @@ void handleButton(void)
     }
 
     //Send data if button state is high
-    if(buttonState == HIGH) //The problem could be here !!!!!!!
+    if(buttonState == HIGH) 
     {
       Serial.println("p");
     }
