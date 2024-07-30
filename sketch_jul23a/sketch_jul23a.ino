@@ -10,7 +10,7 @@ int servoAngleValue;
 Servo s1;
 
 //RGB LED
-String r;
+String l;
 int ledValue;
 
 //Pushbutton
@@ -92,6 +92,12 @@ void setup() {
   //Define 3th pin as Output pin so that we can control the red LED
   pinMode(3, OUTPUT);
 
+  //Define 5th pin as Output pin so we control the grey LED
+  pinMode(5,OUTPUT);
+
+  //Define 6th pin as Output pin so we can control the blue LED
+  pinMode(6,OUTPUT);
+
   //Define 4th pin as Input Pullup pin so that pushbutton can be followed whether is pushed or not
   pinMode(4, INPUT_PULLUP);
 
@@ -136,11 +142,24 @@ void loop() {
       delay(100);
       break;
 
-      case 'R' : //Set the RED LED intensity
-      r = data.substring(1);
-      ledValue = r.toInt();
+      case 'R' : //Set the RED LED intensity(3rd Pin)
+      l = data.substring(1);
+      ledValue = l.toInt();
       analogWrite(3, ledValue);
       break;
+
+      case 'G' : //Set the GREY LED intensity(5th Pin)
+      l = data.substring(1);
+      ledValue = l.toInt();
+      analogWrite(5, ledValue);
+      break;
+
+      case 'B' : //Set the BLUE LED intensity(6th Pin)
+      l = data.substring(1);
+      ledValue = l.toInt();
+      analogWrite(6, ledValue);
+      break;
+
     }   
   }
 

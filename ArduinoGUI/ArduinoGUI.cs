@@ -15,6 +15,8 @@ namespace ArduinoGUI
 
         //String value to hold the red LED intensity
         private string red;
+        private string gray;
+        private string blue;
 
         //A bridge that is need between the two threads
         public delegate void d1(string indata);
@@ -57,21 +59,44 @@ namespace ArduinoGUI
 
         private void trackBarRedValue_Scroll(object sender, EventArgs e)
         {
-
             red = "R" + trackBarRedValue.Value;
-
         }
 
         private void sendRedValue_Click(object sender, EventArgs e)
         {
-
             if(string.IsNullOrEmpty(red))
             {
                 red = "R0";
             }
-
             serialPort1.Write(red);
 
+        }
+        private void trackBarGreyValue_Scroll(object sender, EventArgs e)
+        {
+            gray = "G" + trackBarGreyValue.Value;
+        }
+
+        private void sendGreyValue_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(gray))
+            {
+                gray = "G0";
+            }
+            serialPort1.Write(gray);
+        }
+
+        private void trackBarBlueValue_Scroll(object sender, EventArgs e)
+        {
+            blue = "B" + trackBarBlueValue.Value;
+        }
+
+        private void sendBlueValue_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(blue))
+            {
+                blue = "B0";
+            }
+            serialPort1.Write(blue);
         }
 
         //This function receive data from Arduino
@@ -118,9 +143,8 @@ namespace ArduinoGUI
 
                     //Show value as integer
                     progressBarPotValue.Value = Convert.ToInt16(inData.Substring(1));
-                    break;
+                break;
             }
         }
-
     }
 }
