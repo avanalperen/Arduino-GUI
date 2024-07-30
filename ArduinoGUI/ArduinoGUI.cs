@@ -88,7 +88,14 @@ namespace ArduinoGUI
         {
             
             char firstChar;
+            
+
+            //Holds the actual data of potentiometer converted to voltage
+            Single volts;
+
+            //Counts
             Single numData;
+
             firstChar = inData[0];
             
             switch(firstChar)
@@ -97,7 +104,23 @@ namespace ArduinoGUI
                     counter++;
                     textBoxCounter.Text = Convert.ToString(counter);
                 break;
+
+                case 'v': //'v' indicates its a potentiometer data
+
+                    //Convert data to single in numData var
+                    numData = Convert.ToSingle(inData.Substring(1));
+
+                    //Amount of voltage per step to get the voltage value at the potentiometer
+                    volts = numData * 5 / 1024;
+
+                    //Defining text format function to show the volts data in our potvalue as text
+                    textBoxPotValue.Text = String.Format("{0:0.00}", volts);
+
+                    //Show value as integer
+                    progressBarPotValue.Value = Convert.ToInt16(inData.Substring(1));
+                    break;
             }
-        }    
+        }
+
     }
 }

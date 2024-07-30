@@ -52,6 +52,35 @@ void handleButton(void)
   lastButtonState = reading;
 }
 
+//To take values from potentiometer and handle the data about it
+void handlePot(void)
+{
+  String val;
+  static int old = 0;
+  int current = 0 , upper, lower;
+
+  current = analogRead(A0);
+
+  //To avoid jigger every time we use upper and lower method with if statements
+  upper = current + 2;
+  lower = current - 2;
+
+  if(current != old)
+  {
+    //If its lower value bigger than old it updates value automatically and also, if its upper value is equals or lower than old value
+    if((old <= lower) || (old >= upper))
+    {
+      val = String(current);
+      
+      Serial.print("v");
+      Serial.println(val);
+
+      //At the and it makes old value equal to current for catching new lower value
+      old = current;
+    }
+  }
+}
+
 void setup() {
 
   //Setup serial port
@@ -115,7 +144,11 @@ void loop() {
     }   
   }
 
+  //Call pushbutton function
   handleButton();
+
+  //Call potentiometer function
+  handlePot();
   
 }
 

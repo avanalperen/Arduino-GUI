@@ -37,6 +37,8 @@
             this.trackBarRedValue = new System.Windows.Forms.TrackBar();
             this.sendRedValue = new System.Windows.Forms.Button();
             this.textBoxCounter = new System.Windows.Forms.TextBox();
+            this.textBoxPotValue = new System.Windows.Forms.TextBox();
+            this.progressBarPotValue = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRedValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             // 
             this.servoAngleButton.AutoSize = true;
             this.servoAngleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.servoAngleButton.Location = new System.Drawing.Point(291, 39);
+            this.servoAngleButton.Location = new System.Drawing.Point(266, 37);
             this.servoAngleButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.servoAngleButton.Name = "servoAngleButton";
             this.servoAngleButton.Size = new System.Drawing.Size(133, 35);
@@ -87,14 +89,14 @@
             // textBoxAngle
             // 
             this.textBoxAngle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxAngle.Location = new System.Drawing.Point(429, 41);
+            this.textBoxAngle.Location = new System.Drawing.Point(404, 39);
             this.textBoxAngle.Name = "textBoxAngle";
             this.textBoxAngle.Size = new System.Drawing.Size(100, 31);
             this.textBoxAngle.TabIndex = 3;
             // 
             // trackBarRedValue
             // 
-            this.trackBarRedValue.Location = new System.Drawing.Point(30, 167);
+            this.trackBarRedValue.Location = new System.Drawing.Point(30, 113);
             this.trackBarRedValue.Maximum = 255;
             this.trackBarRedValue.Name = "trackBarRedValue";
             this.trackBarRedValue.Size = new System.Drawing.Size(241, 45);
@@ -107,7 +109,7 @@
             this.sendRedValue.AutoSize = true;
             this.sendRedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sendRedValue.ForeColor = System.Drawing.Color.Red;
-            this.sendRedValue.Location = new System.Drawing.Point(276, 167);
+            this.sendRedValue.Location = new System.Drawing.Point(276, 113);
             this.sendRedValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.sendRedValue.Name = "sendRedValue";
             this.sendRedValue.Size = new System.Drawing.Size(133, 35);
@@ -119,16 +121,34 @@
             // textBoxCounter
             // 
             this.textBoxCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxCounter.Location = new System.Drawing.Point(30, 257);
+            this.textBoxCounter.Location = new System.Drawing.Point(30, 193);
             this.textBoxCounter.Name = "textBoxCounter";
             this.textBoxCounter.Size = new System.Drawing.Size(100, 31);
             this.textBoxCounter.TabIndex = 6;
+            // 
+            // textBoxPotValue
+            // 
+            this.textBoxPotValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBoxPotValue.Location = new System.Drawing.Point(151, 316);
+            this.textBoxPotValue.Name = "textBoxPotValue";
+            this.textBoxPotValue.Size = new System.Drawing.Size(100, 31);
+            this.textBoxPotValue.TabIndex = 7;
+            // 
+            // progressBarPotValue
+            // 
+            this.progressBarPotValue.Location = new System.Drawing.Point(100, 269);
+            this.progressBarPotValue.Maximum = 1023;
+            this.progressBarPotValue.Name = "progressBarPotValue";
+            this.progressBarPotValue.Size = new System.Drawing.Size(200, 31);
+            this.progressBarPotValue.TabIndex = 8;
             // 
             // ArduinoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBarPotValue);
+            this.Controls.Add(this.textBoxPotValue);
             this.Controls.Add(this.textBoxCounter);
             this.Controls.Add(this.sendRedValue);
             this.Controls.Add(this.trackBarRedValue);
@@ -155,6 +175,8 @@
         private System.Windows.Forms.TrackBar trackBarRedValue;
         private System.Windows.Forms.Button sendRedValue;
         private System.Windows.Forms.TextBox textBoxCounter;
+        private System.Windows.Forms.TextBox textBoxPotValue;
+        private System.Windows.Forms.ProgressBar progressBarPotValue;
     }
 }
 
