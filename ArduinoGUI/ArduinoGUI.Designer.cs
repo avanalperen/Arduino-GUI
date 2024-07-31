@@ -48,6 +48,8 @@
             this.ledControl = new System.Windows.Forms.Label();
             this.embedLedControl = new System.Windows.Forms.Label();
             this.servoAngle = new System.Windows.Forms.Label();
+            this.buttonStopPot = new System.Windows.Forms.Button();
+            this.buttonStartPot = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRedValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarGreyValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBlueValue)).BeginInit();
@@ -256,11 +258,39 @@
             this.servoAngle.Text = "Servo Angle";
             this.servoAngle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonStopPot
+            // 
+            this.buttonStopPot.AutoSize = true;
+            this.buttonStopPot.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonStopPot.Location = new System.Drawing.Point(666, 418);
+            this.buttonStopPot.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonStopPot.Name = "buttonStopPot";
+            this.buttonStopPot.Size = new System.Drawing.Size(100, 35);
+            this.buttonStopPot.TabIndex = 19;
+            this.buttonStopPot.Text = "Stop";
+            this.buttonStopPot.UseVisualStyleBackColor = true;
+            this.buttonStopPot.Click += new System.EventHandler(this.buttonStopPot_Click);
+            // 
+            // buttonStartPot
+            // 
+            this.buttonStartPot.AutoSize = true;
+            this.buttonStartPot.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonStartPot.Location = new System.Drawing.Point(561, 418);
+            this.buttonStartPot.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonStartPot.Name = "buttonStartPot";
+            this.buttonStartPot.Size = new System.Drawing.Size(100, 35);
+            this.buttonStartPot.TabIndex = 18;
+            this.buttonStartPot.Text = "Start";
+            this.buttonStartPot.UseVisualStyleBackColor = true;
+            this.buttonStartPot.Click += new System.EventHandler(this.buttonStartPot_Click);
+            // 
             // ArduinoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 508);
+            this.Controls.Add(this.buttonStopPot);
+            this.Controls.Add(this.buttonStartPot);
             this.Controls.Add(this.servoAngle);
             this.Controls.Add(this.embedLedControl);
             this.Controls.Add(this.ledControl);
@@ -311,6 +341,8 @@
         private System.Windows.Forms.Label ledControl;
         private System.Windows.Forms.Label embedLedControl;
         private System.Windows.Forms.Label servoAngle;
+        private System.Windows.Forms.Button buttonStopPot;
+        private System.Windows.Forms.Button buttonStartPot;
     }
 }
 

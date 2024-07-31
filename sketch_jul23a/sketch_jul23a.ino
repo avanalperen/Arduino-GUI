@@ -19,6 +19,9 @@ unsigned long debounceDelay = 5;
 int buttonState;
 int lastButtonState = HIGH; 
 
+//Potentiometer
+bool openPot = false;
+
 //Purpose of debounce timer is to indicate that the button is not pushed in that time againly to control it in more efficient way
 void handleButton(void)
 {
@@ -39,15 +42,14 @@ void handleButton(void)
     if(reading != buttonState)
     {
       buttonState = reading; 
-    }
 
-    //Send data if button state is high
-    if(buttonState == HIGH) 
-    {
-      Serial.println("p");
+      //Send data if button state is high
+      if(buttonState == HIGH) 
+      {
+        Serial.println("p");
+      }
     }
   }
-
   //Save the reading for the next time through the loop
   lastButtonState = reading;
 }
@@ -72,6 +74,8 @@ void handlePot(void)
     {
       val = String(current);
       
+      delay(200);
+
       Serial.print("v");
       Serial.println(val);
 
@@ -160,14 +164,25 @@ void loop() {
       analogWrite(6, ledValue);
       break;
 
+      case 'O' : //Start send potentiometer value
+      openPot = true;
+      break;
+
+      case 'o' : //Stop send potentiometer value
+      openPot = false;
+      break;
+
     }   
   }
 
   //Call pushbutton function
   handleButton();
-
-  //Call potentiometer function
-  handlePot();
+  
+  if(openPot == true)
+  {
+    //Call potentiometer function
+    handlePot();
+  }
   
 }
 

@@ -146,5 +146,17 @@ namespace ArduinoGUI
                 break;
             }
         }
+
+        private void buttonStartPot_Click(object sender, EventArgs e)
+        {
+            //Start potentiometer 
+            serialPort1.Write("O");
+        }
+
+        private void buttonStopPot_Click(object sender, EventArgs e)
+        {
+            //Stop potentiometer
+            serialPort1.Write("o");
+        }
     }
 }
